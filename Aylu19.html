@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Aylu 💖</title>
+
+<style>
+
+.ascii {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #ff4d88;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.ascii pre {
+    margin: 0;
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* Inicio */
+#inicio {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inicio button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #ff4d88;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Carta */
+.carta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 650px;
+    width: 85%;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255,77,136,0.5);
+    transition: 1s;
+}
+
+.carta.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+p {
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* Contador */
+#contador {
+    margin-top: 15px;
+    color: #ff4d88;
+}
+
+/* Botón secreto */
+.secret {
+    margin-top: 20px;
+    background: transparent;
+    border: 1px solid #ff4d88;
+    color: #ff4d88;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Animaciones */
+.corazon, .tulipan, .burger, .torta {
+    position: absolute;
+    animation: flotar 6s linear infinite;
+}
+
+@keyframes flotar {
+    0% {transform: translateY(100vh); opacity: 0;}
+    50% {opacity: 1;}
+    100% {transform: translateY(-10vh); opacity: 0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- VIDEO OCULTO (MÚSICA) -->
+<iframe id="ytplayer"
+width="0" height="0"
+src="https://www.youtube.com/embed/HOQqFXtFVxM?autoplay=1&loop=1&playlist=HOQqFXtFVxM"
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<div id="inicio">
+    <h1>🎁 Aylu… esto es para vos 🎁</h1>
+    <button onclick="abrir()">Abrir</button>
+</div>
+
+<div class="carta" id="carta">
+
+<h1>Feliz cumpleaños Aylu 🎂💖</h1>
+
+<p>
+Hoy cumplís 19… y no es un día cualquiera.
+y te fuiste volviendo alguien demasiado importante.
+</p>
+
+<p>
+Sos enojona… pero de esa forma que me encanta.
+Y sí… comés mucho 🍔, pero hasta eso te hace única.
+</p>
+
+<p>
+Tu obsesión con YSY A,
+y tu amor por Hello Kitty 🐱…
+todo eso te hace vos.
+</p>
+
+<p>
+No sé qué somos…
+pero sé que no sos cualquiera.
+</p>
+
+<div id="contador"></div>
+
+<button class="secret" onclick="mensajeSecreto()">NO TOCAR</button>
+
+<p><b>Con cariño</b><br>Liza 💖</p>
+
+</div>
+
+<div class="kitty"></div>
+<div class="ascii">
+<pre>
+⠀⠀⠀⠀⢀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⣠⠾⠛⠶⣄⢀⣠⣤⠴⢦⡀⠀⠀⠀⠀
+⠀⠀⠀⢠⡿⠉⠉⠉⠛⠶⠶⠖⠒⠒⣾⠋⠀⢀⣀⣙⣯⡁⠀⠀⠀⣿⠀⠀⠀⠀
+⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠀⠀⢯⣼⠋⠉⠙⢶⠞⠛⠻⣆⠀⠀⠀
+⠀⠀⠀⢸⣧⠆⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⣤⡤⢿⡀⠀⢀⣼⣷⠀⠀⣽⠀⠀⠀
+⠀⠀⠀⣼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⢏⡉⠁⣠⡾⣇⠀⠀⠀
+⠀⠀⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠋⠉⠀⢻⡀⠀⠀
+⣀⣠⣼⣧⣤⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠐⠖⢻⡟⠓⠒
+⠀⠀⠈⣷⣀⡀⠀⠘⠿⠇⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠿⠟⠀⠀⠀⠲⣾⠦⢤⠀
+⠀⠀⠋⠙⣧⣀⡀⠀⠀⠀⠀⠀⠀⠘⠦⠼⠃⠀⠀⠀⠀⠀⠀⠀⢤⣼⣏⠀⠀⠀
+⠀⠀⢀⠴⠚⠻⢧⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠞⠉⠉⠓⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠶⠶⠶⣶⣤⣴⡶⠶⠶⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀
+</pre>
+</div>
+
+<script>
+
+function abrir(){
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("carta").classList.add("active");
+}
+
+/* Contador */
+let fechaInicio = new Date("2025-12-01");
+
+function actualizar(){
+    let hoy = new Date();
+    let diff = hoy - fechaInicio;
+    let dias = Math.floor(diff / (1000*60*60*24));
+    document.getElementById("contador").innerText =
+        "Desde que nos conocimos: " + dias + " días. ";
+}
+setInterval(actualizar,1000);
+
+/* Secreto */
+function mensajeSecreto(){
+    alert("Aunque no seamos nada… sos todo para mí 💖");
+}
+
+/* Animaciones */
+setInterval(()=>{
+    let e=document.createElement("div");
+    e.className="corazon";
+    e.innerText="💖";
+    e.style.left=Math.random()*100+"vw";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),6000);
+},400);
+
+setInterval(()=>{
+    let e=document.createElement("div");
+    e.className="torta";
+    e.innerText="🎂";
+    e.style.left=Math.random()*100+"vw";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),6000);
+},400);
+
+setInterval(()=>{
+    let e=document.createElement("div");
+    e.className="tulipan";
+    e.innerText="🌷";
+    e.style.left=Math.random()*100+"vw";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),6000);
+},900);
+
+setInterval(()=>{
+    let e=document.createElement("div");
+    e.className="burger";
+    e.innerText="🍔";
+    e.style.left=Math.random()*100+"vw";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),6000);
+},900);
+
+</script>
+
+</body>
+</html>
